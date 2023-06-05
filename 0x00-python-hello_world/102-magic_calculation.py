@@ -2,4 +2,3 @@
 def magic_calculation(a,b):
 	calc = 98 + a**b
 	return calc
-	
