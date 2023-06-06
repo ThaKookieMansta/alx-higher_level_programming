@@ -3,21 +3,7 @@
 #include <string.h>
 #include <stdio.h>
 
-/**
- * create_nodes - Creates nodes for the linked lists
- * @n: The node data
- * Return:PTR to the new node
-*/
-listint_t *create_nodes(int n)
-{
-	listint_t *r = NULL;
-
-	r = malloc(sizeof(listint_t));
-	if (!r)
-		return (NULL)
-	r->next = NULL;
-	r->n = n;
-}
+listint_t *create_node(int n);
 
 /**
  * insert_node - inserts a number into a sorted singly linked list
@@ -36,7 +22,7 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	else if (!(*head))
 	{
-		new_node = create_nodes(number);
+		new_node = create_node(number);
 		*head = new_node;
 		return (new_node);
 	}
@@ -46,7 +32,7 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		if (this_node->n >= number)
 		{
-			new_node = create_nodes(number);
+			new_node = create_node(number);
 			new_node->next = this_node;
 			*head = new_node;
 			return (new_node);
@@ -55,7 +41,7 @@ listint_t *insert_node(listint_t **head, int number)
 		{
 			if (!this_node->next || this_node->next->n >= number)
 			{
-				new_node = create_nodes(number);
+				new_node = create_node(number);
 				new_node->next = this_node->next;
 				this_node->next = new_node;
 				return (this_node->next);
@@ -65,4 +51,20 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	return (NULL);
 
+}
+
+/**
+ * create_node - Creates nodes for the linked lists
+ * @n: The node data
+ * Return:PTR to the new node
+*/
+listint_t *create_node(int n)
+{
+	listint_t *r = NULL;
+
+	r = malloc(sizeof(listint_t));
+	if (!r)
+		return (NULL)
+	r->next = NULL;
+	r->n = n;
 }
