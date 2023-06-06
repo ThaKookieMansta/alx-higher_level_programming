@@ -6,13 +6,12 @@
 listint_t *create_nodes(int n);
 
 /**
- * insert_node - inserts a node sorted in a linked list of ints
- * @head: double pointer to head of LL, needed for modification in edge
- * cases
- * @number: data for new node
- *
- * Return: pointer to newly created node, NULL on failure
- */
+* insert_node - inserts a node sorted in a linked list of ints
+* @head: double pointer to head of LL, needed for modification in edge
+* cases
+* @number: data for new node
+* Return: pointer to newly created node, NULL on failure
+*/
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *this_node = NULL, *new_node = NULL;
