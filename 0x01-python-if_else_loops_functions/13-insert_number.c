@@ -5,10 +5,10 @@
 
 /**
  * create_nodes - Creates nodes for the linked lists
- * @data: The node data
+ * @n: The node data
  * Return:PTR to the new node
 */
-listint_t *create_nodes(int data)
+listint_t *create_nodes(int n)
 {
 	listint_t *r = NULL;
 
@@ -16,7 +16,7 @@ listint_t *create_nodes(int data)
 	if (!r)
 		return (NULL)
 	r->next = NULL;
-	r->data = data;
+	r->n = n;
 }
 
 /**
@@ -44,16 +44,16 @@ listint_t *insert_node(listint_t **head, int number)
 	this_node = *head;
 	while (this_node)
 	{
-		if (this_node->data >= number)
+		if (this_node->n >= number)
 		{
 			new_node = create_nodes(number);
 			new_node->next = this_node;
 			*head = new_node;
 			return (new_node);
 		}
-		else if (this_node->data <= number)
+		else if (this_node->n <= number)
 		{
-			if (!cur_node->next || this_node->next->data >= number)
+			if (!this_node->next || this_node->next->n >= number)
 			{
 				new_node = create_nodes(number);
 				new_node->next = this_node->next;
