@@ -7,4 +7,4 @@ def uppercase(str):
             uppercase_string += chr(ascii_value)
         else:
             uppercase_string += i
-    print("{:str}".format(uppercase_string))
+    print(uppercase_string)
