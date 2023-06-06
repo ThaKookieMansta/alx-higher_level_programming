@@ -13,16 +13,14 @@ listint_t *create_nodes(int data)
 	listint_t *r = NULL;
 
 	r = malloc(sizeof(listint_t));
-	if(!r)
-	{
-		return(NULL)
-	}
+	if (!r)
+		return (NULL)
 	r->next = NULL;
 	r->data = data;
 }
 
 /**
- * insert_node: inserts a number into a sorted singly linked list
+ * insert_node - inserts a number into a sorted singly linked list
  * @head: double pointer to the head of the linked list
  * @number: the new data
  * Return: the address of the new node, or NULL if it failed
@@ -31,6 +29,7 @@ listint_t *create_nodes(int data)
 listint_t *insert_node(listint_t **head, int number)
 {
 	listint_t *this_node = NULL, *new_node = NULL;
+
 	if (!head)
 	{
 		return (NULL);
@@ -64,6 +63,6 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		this_node = this_node->next;
 	}
-	return (NULL;)
+	return (NULL);
 
 }
