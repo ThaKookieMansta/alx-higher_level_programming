@@ -3,7 +3,10 @@ from sys import argv
 
 if __name__ == "__main__":
     arguments_length = len(argv) - 1
-    print("{:d} arguments".format(arguments_length), end="")
+    if arguments_length == 1:
+        print("{:d} argument".format(arguments_length), end="")
+    else:
+        print("{:d} arguments".format(arguments_length), end="")
     if arguments_length == 0:
         print(".")
     else:
