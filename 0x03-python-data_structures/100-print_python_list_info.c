@@ -2,9 +2,9 @@
 #include <Python.h>
 
 /**
- * print_python_list_info - A function that prints information about a
- * python list object
- * @p: The pointer to generic PyObject which is of PyListObject type
+ * print_python_list_info - A function that prints some basic info about
+ * Python lists
+ * @p: The pointer to generic PyObject
  * Return: Nothing.
  */
 void print_python_list_info(PyObject *p)

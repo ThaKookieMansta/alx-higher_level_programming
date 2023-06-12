@@ -1,8 +1,7 @@
 #include "lists.h"
+#include <stdlib.h>
 #include <string.h>
 #include <stdio.h>
-#include <stdlib.h>
-
 /**
   * is_palindrome - A function that checks if a singly linked 
   * list is a palindrome
