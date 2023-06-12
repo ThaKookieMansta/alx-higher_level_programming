@@ -8,10 +8,10 @@ def multiple_returns(sentence):
     :return:
     """
     fc = ""
-    if len(sentence) == 0:
+    my_length = len(sentence)
+    if my_length == 0:
         fc = None
     else:
-        length = len(sentence)
         fc = sentence[0]
-        sentence_tuple = (length, fc,)
-    return sentence_tuple
+
+    return my_length, fc,
