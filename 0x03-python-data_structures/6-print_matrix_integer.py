@@ -10,7 +10,7 @@ def print_matrix_integer(matrix=[[]]):
         j_length = len(i)
         for j in range(j_length):
             if j != j_length - 1:
-                print("{}".format(i[j]), end=" ")
+                print("{:d}".format(i[j]), end=" ")
             else:
-                print("{}".format(i[j]), end="")
+                print("{:d}".format(i[j]), end="")
         print()
