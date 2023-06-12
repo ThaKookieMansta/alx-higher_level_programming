@@ -2,7 +2,8 @@
 
 def new_in_list(my_list, idx, element):
     """
-    This function that replaces an element in a list at a specific position without modifying the original list
+    This function that replaces an element in a list at a specific position
+     without modifying the original list
     :param my_list:
     :param idx:
     :param element:

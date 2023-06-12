@@ -7,4 +7,4 @@ def print_list_integer(my_list=[]):
     :return:
     """
     for i in my_list:
-        print("{}".format(i))
+        print("{:d}".format(i))
