@@ -7,6 +7,10 @@ def print_matrix_integer(matrix=[[]]):
     :return:
     """
     for i in matrix:
-        for j in i:
-            print("{}".format(j), end=" ")
+        j_length = len(i)
+        for j in range(j_length):
+            if j != j_length - 1:
+                print("{}".format(i[j]), end=" ")
+            else:
+                print("{}".format(i[j]), end="")
         print()

@@ -6,6 +6,7 @@ def print_reversed_list_integer(my_list=[]):
     :param my_list:
     :return:
     """
-    my_list.reverse()
-    for i in my_list:
-        print("{:d}".format(i))
+    if type(my_list) == list:
+        my_list.reverse()
+        for i in my_list:
+            print("{:d}".format(i))

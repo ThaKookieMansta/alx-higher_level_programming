@@ -14,4 +14,4 @@ def multiple_returns(sentence):
         length = len(sentence)
         fc = sentence[0]
         sentence_tuple = (length, fc,)
-        return sentence_tuple
+    return sentence_tuple
