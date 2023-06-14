@@ -8,7 +8,8 @@ def complex_delete(a_dictionary, value):
     :return:
     """
     if type(a_dictionary) is dict and a_dictionary is not None:
-        for_deletion = {key: val for (key, val) in a_dictionary.items() if val == value}
+        for_deletion = {key: val for (key, val) in a_dictionary.items()
+                        if val == value}
         for keys, vals in for_deletion.items():
             del a_dictionary[keys]
     return a_dictionary.copy()
