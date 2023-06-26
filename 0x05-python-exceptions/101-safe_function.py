@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+import sys
+
 
 def safe_function(fct, *args):
     """
@@ -11,5 +13,5 @@ def safe_function(fct, *args):
         result = fct(*args)
         return result
     except (ZeroDivisionError, TypeError, ValueError, IndexError) as e:
-        print("Exception: " + str(e))
+        print("Exception: {}".format(e), file=sys.stderr)
         return None
