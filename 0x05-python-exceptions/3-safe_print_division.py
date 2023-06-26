@@ -6,10 +6,11 @@ def safe_print_division(a, b):
     :param b: The second integer
     :return: The value of the division
     """
+    result = 0
     try:
         result = a / b
         return result
-    except:
+    except ZeroDivisionError:
         result = None
         return result
     finally:
