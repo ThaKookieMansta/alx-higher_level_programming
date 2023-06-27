@@ -77,7 +77,14 @@ class Square:
         A print function
         :return:
         """
-        h = self.__size
-        while h > 0:
-            print(" " * self.__position[1] + "#" * self.__size)
-            h -= 1
+        if self.__size == 0:
+            print()
+        else:
+
+            h = self.__size
+            while h > 0:
+                if self.__position[1] > 1:
+                    print("#" * self.__size)
+                else:
+                    print(" " * self.__position[0] + "#" * self.__size)
+                h -= 1
