@@ -1,4 +1,10 @@
 #!/usr/bin/python3
+"""
+This module defines a square
+Checks the data for integrity
+then calculates the area
+"""
+
 
 class Square:
     """
