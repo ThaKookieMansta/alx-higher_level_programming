@@ -35,7 +35,9 @@ class Square:
         :return:
         """
 
-        if type(value) is not int or type(value) is not float:
+        if type(value) is int or type(value) is float:
+            pass
+        else:
             raise TypeError("size must be a number")
         if int(value) < 0:
             raise ValueError("size must be >= 0")
