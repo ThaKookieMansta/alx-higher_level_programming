@@ -55,7 +55,7 @@ class Square:
         A print function
         :return:
         """
-        h = self.__size
-        while h > 0:
-            print("#" * self.__size)
-            h -= 1
+        for i in range(self.__size):
+            for j in range(self.__size):
+                print("#", end="")
+            print()
