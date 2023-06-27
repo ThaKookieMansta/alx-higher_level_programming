@@ -15,9 +15,9 @@ class Square:
 
     def __init__(self, size=0, position=(0, 0)):
         """
-        Initiation for the class Square
+         Initiation for the class Square
         :param size:
-        :return:
+        :param position:
         """
         self.__size = size
         self.__position = position
@@ -66,7 +66,6 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         elif type(value[1]) is not int or value[1] < 0:
             raise TypeError("position must be a tuple of 2 positive integers")
-
         self.__position = value
 
     def area(self):
@@ -82,13 +81,11 @@ class Square:
         :return:
         """
         if self.__size == 0:
-            print()
-        else:
-            for i in range(self.position[1]):
-                print()
-            for i in range(self.size):
-                for j in range(self.position[0]):
-                    print(end=" ")
-                for k in range(self.size):
-                    print("#", end="")
-                print()
+            print("")
+            return
+
+        [print("") for x in range(0, self.__position[1])]
+        for x in range(0, self.__size):
+            [print(" ", end="") for y in range(0, self.__position[0])]
+            [print("#", end="") for z in range(0, self.__size)]
+            print("")
