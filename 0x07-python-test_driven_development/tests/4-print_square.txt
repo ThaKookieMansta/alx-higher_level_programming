@@ -1,0 +1,86 @@
+====================================
+4. print_square module
+====================================
+
+import module
+=============
+>>> print_square = __import__('4-print_square').print_square
+
+Testing for positive integer values
+===================================
+
+>>> print_square(5)
+#####
+#####
+#####
+#####
+#####
+
+Testing for negative integer values
+===================================
+
+>>> print_square(-6)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+Testing for positive float values
+=================================
+
+>>> print_square(6.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for negative float values
+=================================
+
+>>> print_square(-6.5)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for a string instead of an integer
+==========================================
+
+>>> print_square("5")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for a boolean instead of an integer
+===========================================
+
+>>> print_square(True)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for a tuple instead of integer
+======================================
+
+>>> print_square((5,7,))
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for a list instead of an integer
+=======================================
+>>> print_square([4,2])
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for a dictionary instead of an integer
+==============================================
+
+>>> print_square({"4" : "5"})
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+Testing for no arguments
+========================
+
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
+
+Testing for excess arguments
+============================
+
+>>> print_square(4, 7)
+Traceback (most recent call last):
+TypeError: print_square() takes 1 positional argument but 2 were given

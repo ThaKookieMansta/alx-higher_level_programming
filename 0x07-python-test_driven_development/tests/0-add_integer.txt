@@ -1,0 +1,83 @@
+====================================
+0. add integer module
+====================================
+
+import module
+>>> add_integer = __import__('0-add_integer').add_integer
+
+ Test for positive integers
+ ===========================
+ >>> add_integer(20,13)
+ 33
+
+ Test for negative integers
+ ===========================
+ >>> add_integer(-30, -50)
+ -80
+
+ Test for positive floats
+ =========================
+ >>> add_integer(23.7, 17.9)
+ 40
+
+Testing for negative floats
+===========================
+>>> add_integer(-65.6, -102.6)
+-167
+
+Testing for single argument (a only)
+===========================
+>>> add_integer(2)
+100
+
+Testing for single argument (a with empty b)
+============================================
+>>> add_integer(2, )
+100
+
+Testing with string
+====================
+>>> add_integer(25, "ALX")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("25")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("23.7", "-102.6")
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+Testing with other Non Number values
+=====================================
+>>> add_integer(23.7, None)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(None, 23.7)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(5, float('nan'))
+Traceback (most recent call last):
+ValueError: cannot convert float NaN to integer
+
+>>> add_integer(float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+>>> add_integer(5, float('inf'))
+Traceback (most recent call last):
+OverflowError: cannot convert float infinity to integer
+
+Testing if more arguments are passed
+=====================================
+>>> add_integer(5, 4, 7)
+Traceback (most recent call last):
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
