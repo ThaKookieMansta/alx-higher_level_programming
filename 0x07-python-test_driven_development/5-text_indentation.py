@@ -21,5 +21,3 @@ def text_indentation(text):
         txt_output = txt_output.replace('\n ', '\n')
 
     print(txt_output, end='')
-
-
