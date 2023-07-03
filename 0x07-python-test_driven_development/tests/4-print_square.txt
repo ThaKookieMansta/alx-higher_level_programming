@@ -6,6 +6,22 @@ import module
 =============
 >>> print_square = __import__('4-print_square').print_square
 
+Checking Module Docstring
+=========================
+
+>>> m = __import__("4-print_square").__doc__
+>>> len(m) > 1
+True
+
+Checking function Docstring
+===========================
+
+>>> f = __import__("4-print_square").print_square.__doc__
+>>> len(f) > 1
+True
+
+
+
 Testing for positive integer values
 ===================================
 

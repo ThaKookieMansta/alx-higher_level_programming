@@ -5,6 +5,22 @@
 import module
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
+
+Checking Module Docstring
+=========================
+
+>>> m = __import__("5-text_indentation").__doc__
+>>> len(m) > 1
+True
+
+Checking function Docstring
+===========================
+
+>>> f = __import__("5-text_indentation").text_indentation.__doc__
+>>> len(f) > 1
+True
+
+
  Test for Normal String
  ======================
 >>> text_indentation("I love cats. They are cute. What is your favorite color? List them:")
