@@ -21,14 +21,6 @@ class Rectangle:
         self.__width = width
         Rectangle.number_of_instances += 1
 
-    def __del__(self):
-        """
-        Prints a string when a rectangle is deleted
-        :return:
-        """
-        print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1
-
     @property
     def width(self):
         """
@@ -101,7 +93,7 @@ class Rectangle:
         """
         printout = ""
         if self.__width != 0 and self.__height != 0:
-            printout += "\n".join(Rectangle.print_symbol * self.__width
+            printout += "\n".join(self.print_symbol * self.__width
                                   for j in range(self.__height))
         return printout
 
@@ -112,4 +104,10 @@ class Rectangle:
         """
         return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
 
-
+    def __del__(self):
+        """
+        Prints a string when a rectangle is deleted
+        :return:
+        """
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
