@@ -1,1 +1,23 @@
-# ALX Higher Level Proramming repository
+# ALX Higher Level Programming repository
+## Introduction
+
+This is the repository for the ALX Higher Level Programming Sprint at ALX. This coversPython programming and scripting.
+
+## Directory list
+
+The following directories are located in this repository
+
+| Directory Name                      |
+|-------------------------------------|
+| 0x00-python-hello_world             |
+| 0x01-python-if_else_loops_functions |
+| 0x02-python-import_modules          |
+| 0x03-python-data_structures         |
+| 0x04-python-more_data_structures    |
+| 0x05-python-exceptions              |
+| 0x06-python-classes                 |
+| 0x07-python-test_driven_development |
+| README.md                           |
+
+## License
+This Repository and it's content are only for use by the ALX checker
