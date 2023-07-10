@@ -10,7 +10,7 @@ class MyList(list):
     """
     This class inherits from list class
     """
-    
+
     def __init__(self):
         """
         This instantiates the objects
