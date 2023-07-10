@@ -3,6 +3,7 @@
 ====================================
 
 import module
+=============
 >>> my_list = __import__('1-my_list').MyList
 
 Checking Module Docstring
