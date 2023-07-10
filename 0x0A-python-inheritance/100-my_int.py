@@ -10,7 +10,6 @@ class MyInt(int):
     This class inherits the class int
     """
 
-
     def __eq__(self, other):
         """
         This magic function defines what happens when the

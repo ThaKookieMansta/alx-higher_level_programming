@@ -1,4 +1,4 @@
-#!/usr/bin/ python3
+#!/usr/bin/python3
 
 """
 This module contains a function that returns True if the object is an
