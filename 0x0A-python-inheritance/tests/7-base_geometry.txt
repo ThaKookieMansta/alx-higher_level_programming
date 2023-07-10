@@ -1,0 +1,136 @@
+====================================
+7. base_geometry module
+====================================
+
+
+import module
+=============
+>>> base_geometry = __import__("7-base_geometry").BaseGeometry
+
+
+Testing the module docstring
+=============================
+
+>>> m = __import__("7-base_geometry").__doc__
+>>> len(m) > 1
+True
+
+Testing the class docstring
+============================
+
+>>> c = __import__("7-base_geometry").BaseGeometry.__doc__
+>>> len(c) > 1
+True
+
+Testing the  method docstring
+=============================
+
+
+>>> meth = __import__("7-base_geometry").BaseGeometry.area.__doc__
+>>> len(meth) > 1
+True
+>>> meth2 = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+>>> len(meth2) > 1
+True
+
+Testing for area failure
+=========================
+
+>>> base_g = base_geometry()
+>>> base_g.area()
+Traceback (most recent call last):
+Exception: area() is not implemented
+
+Testing the number of arguments for area
+========================================
+
+>>> base_g.area(1)
+Traceback (most recent call last):
+TypeError: area() takes 1 positional argument but 2 were given
+
+Testing for integer validator
+=============================
+
+>>> base_g.integer_validator("integer", 1)
+
+Checking for integer == 0
+=========================
+
+>>> base_g.integer_validator("integer", 0)
+Traceback (most recent call last):
+ValueError: integer must be greater than 0
+
+Checking for integer < 0
+========================
+
+>>> base_g.integer_validator("integer", -5)
+Traceback (most recent call last):
+ValueError: integer must be greater than 0
+
+Checking for non-integer types
+==============================
+
+>>> base_g.integer_validator("bool", False)
+Traceback (most recent call last):
+TypeError: bool must be an integer
+
+>>> base_g.integer_validator("float", 5.2)
+Traceback (most recent call last):
+TypeError: float must be an integer
+
+>>> base_g.integer_validator("complex", complex(1, 1))
+Traceback (most recent call last):
+TypeError: complex must be an integer
+
+>>> base_g.integer_validator("string", "test")
+Traceback (most recent call last):
+TypeError: string must be an integer
+
+>>> base_g.integer_validator("tuple", (6, 6))
+Traceback (most recent call last):
+TypeError: tuple must be an integer
+
+>>> base_g.integer_validator("list", [1, 2, 3])
+Traceback (most recent call last):
+TypeError: list must be an integer
+
+>>> base_g.integer_validator("dict", {"key": "value"})
+Traceback (most recent call last):
+TypeError: dict must be an integer
+
+>>> base_g.integer_validator("set", {"hello", "checker"})
+Traceback (most recent call last):
+TypeError: set must be an integer
+
+>>> base_g.integer_validator("frozenset", frozenset(["hello", "checker"]))
+Traceback (most recent call last):
+TypeError: frozenset must be an integer
+
+>>> base_g.integer_validator("bytes", "bytes")
+Traceback (most recent call last):
+TypeError: bytes must be an integer
+
+>>> base_g.integer_validator("bytearrays", bytearray(b"bytes"))
+Traceback (most recent call last):
+TypeError: bytearrays must be an integer
+
+Checking for no arguments to integer_validator
+=============================================
+
+>>> base_g.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Checking for only 1 argument to integer_validator
+=================================================
+
+>>> base_g.integer_validator("integer")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+Checking for too many arguments
+===============================
+
+>>> base_g.integer_validator("integer", 1, 2)
+Traceback (most recent call last):
+TypeError: integer_validator() takes 3 positional arguments but 4 were given
