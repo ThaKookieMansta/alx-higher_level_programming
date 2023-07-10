@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module includes a class that inherits
-from list
+This module contains a class that inherits the list class
 """
 
 
