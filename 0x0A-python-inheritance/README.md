@@ -22,7 +22,5 @@ This is the ALX 0x0A-python-inheritance project directory
 | tests/1-my_list.txt       |
 | tests/7-base_geometry.txt |
 
-All files here are a complement to the previous one except for the 101-nqueens.py and the README.md
-
 ## License
 This project and it's files are only for use by the ALX checker
