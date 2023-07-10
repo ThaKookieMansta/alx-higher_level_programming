@@ -22,6 +22,4 @@ class MyList(list):
         This method prints a list in ascending order
         :return:
         """
-        new_list = self[:]
-        new_list.sort()
-        print(new_list)
+        print(sorted(self))
