@@ -14,4 +14,4 @@ def read_file(filename=""):
     :return:
     """
     with open(filename, encoding="utf-8") as text_file:
-        print(text_file.read())
+        print(text_file.read(), end="")
