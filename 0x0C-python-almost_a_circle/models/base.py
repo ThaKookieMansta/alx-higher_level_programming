@@ -7,6 +7,7 @@ For more details on the class check the class
 docstring
 """
 import json
+import csv
 
 
 class Base:
@@ -50,5 +51,67 @@ class Base:
 
         dict_list = [i.to_dictionary() for i in list_objs]
 
-        with open(file=f"{cls.__name__}.json", mode="w", encoding="utf-8") as my_dump:
+        with open(file=f"{cls.__name__}.json", mode="w") as my_dump:
             json.dump(dict_list, my_dump)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        This method converts a JSON string into a list
+        :param json_string: The JSON string to be converted
+        :return: The list
+        """
+        return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        This method creates instances of a class
+        :param dictionary: This is a dictionary of all attributes
+        :return: The instance and all attributes created
+        """
+        dummy = cls(1, 1)
+        dummy.update(**dictionary)
+
+        return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        This method returns a list of instances
+        :return: The list of instances
+        """
+        try:
+            with open(file=f"{cls.__name__}.json", mode="r") as file:
+                instance_dict = cls.from_json_string(file.read())
+                new_list = [cls.create(**i) for i in instance_dict]
+                return new_list
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        This method saves instance data to a csv file
+        :param list_objs: The instances and their data
+        :return:
+        """
+        with open(file=f"{cls.__name__}.csv", mode="w", newline='') as csvfile:
+            if list_objs is None or list_objs == []:
+                csvfile.write("[]")
+            else:
+                if cls.__name__ == "Rectangle":
+                    fields = ["id", "width", "height", "x", "y"]
+                else:
+                    fields = ["id", "size", "x", "y"]
+                writer = csv.DictWriter(csvfile, fieldnames=fields)
+                for i in list_objs:
+                    writer.writerow(i.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        This method loads instance data from a csv file
+        :return:
+        """
+        pass

@@ -142,7 +142,8 @@ class Rectangle(Base):
         This magic method defines how fancy text will be displayed
         :return: The fancy text
         """
-        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - {self.width}/{self.height}"
+        return f"[Rectangle] ({self.id}) {self.x}/{self.y} - " \
+               f"{self.width}/{self.height}"
 
     def update(self, *args, **kwargs):
         """
@@ -172,11 +173,11 @@ class Rectangle(Base):
         :return: A dictionary representation
         """
         dict_data = {
-            "id" : self.id,
-            "width" : self.width,
-            "height" : self.height,
-            "x" : self.x,
-            "y" : self.y,
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y,
         }
 
         return dict_data

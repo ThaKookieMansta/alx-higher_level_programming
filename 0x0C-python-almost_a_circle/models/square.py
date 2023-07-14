@@ -21,7 +21,7 @@ class Square(Rectangle):
         :param y:
         :param id:
         """
-        super().__init__(size, size, x, y, id )
+        super().__init__(size, size, x, y, id)
 
     def __str__(self):
         """
@@ -76,10 +76,10 @@ class Square(Rectangle):
         :return: The dictionary representation
         """
         dict_data = {
-            "id" : self.id,
-            "size" : self.size,
-            "x" : self.x,
-            "y" : self.y,
+            "id": self.id,
+            "size": self.size,
+            "x": self.x,
+            "y": self.y,
         }
 
         return dict_data
