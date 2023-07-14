@@ -3,7 +3,7 @@
 """
 This module contains the rectangle class
 """
-from base import Base
+from .base import Base
 
 
 class Rectangle(Base):
@@ -164,3 +164,19 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 if key in attr_updates:
                     setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        This method returns a dictionary representation
+        of a rectangle instance
+        :return: A dictionary representation
+        """
+        dict_data = {
+            "id" : self.id,
+            "width" : self.width,
+            "height" : self.height,
+            "x" : self.x,
+            "y" : self.y,
+        }
+
+        return dict_data
