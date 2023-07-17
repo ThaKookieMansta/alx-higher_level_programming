@@ -13,6 +13,8 @@ Test Classes:
 """
 import os
 import unittest
+
+import pep8
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -22,6 +24,18 @@ class TestBaseInstantiation(unittest.TestCase):
     """
     This tests the instantiation of the classes
     """
+
+    def test_pep8_base(self):
+        """
+        This checks for PEP8
+        :return:
+        """
+        syntax = pep8.StyleGuide(quit=True)
+        check = syntax.check_files(['models/base.py'])
+        self.assertEqual(
+            check.total_errors, 0,
+            "Found code style errors (and warnings)."
+        )
 
     def test_no_args(self):
         """
