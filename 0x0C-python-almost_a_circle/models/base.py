@@ -8,6 +8,8 @@ docstring
 """
 import json
 import csv
+import turtle
+
 
 
 class Base:
@@ -114,4 +116,56 @@ class Base:
         This method loads instance data from a csv file
         :return:
         """
-        pass
+        try:
+            with open(file=f"{cls.__name__}.csv", mode="r") as csvfile:
+                if cls.__name__ == "Rectangle":
+                    fields = ["id", "width", "height", "x", "y"]
+                else:
+                    fields = ["id", "size", "x", "y"]
+
+                dict_list = csv.DictReader(f=csvfile, fieldnames=fields)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in dict_list]
+                return [cls.create(**d) for d in list_dicts]
+        except FileNotFoundError:
+            return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        This method draws the squares and rectangles
+        using the turtle library
+        :param list_rectangles:
+        :param list_squares:
+        :return:
+        """
+        my_pen = turtle.Turtle()
+        my_pen.screen.bgcolor("yellow")
+        my_pen.pensize(3)
+        my_pen.shape("triangle")
+
+        my_pen.color("black")
+        for rectangle in list_rectangles:
+            my_pen.showturtle()
+            my_pen.up()
+            my_pen.goto(rectangle.x, rectangle.y)
+            my_pen.down()
+            for i in range(2):
+                my_pen.forward(rectangle.width)
+                my_pen.left(90)
+                my_pen.forward(rectangle.height)
+                my_pen.left(90)
+            my_pen.hideturtle()
+
+        my_pen.color("red")
+        for square in list_squares:
+            my_pen.showturtle()
+            my_pen.up()
+            my_pen.goto(square.x, square.y)
+            my_pen.down()
+            for i in range(4):
+                my_pen.forward(square.size)
+                my_pen.left(90)
+            my_pen.hideturtle()
+
+        turtle.exitonclick()
