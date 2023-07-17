@@ -11,7 +11,6 @@ import csv
 import turtle
 
 
-
 class Base:
     """
     This is the base class for the 0x0C-python-almost_a_circle project
@@ -41,7 +40,7 @@ class Base:
         :param list_dictionaries: This is a list of dictionaries
         :return: The JSON representation
         """
-        if list_dictionaries is None:
+        if list_dictionaries is None or list_dictionaries == []:
             return "[]"
         return json.dumps(list_dictionaries)
 
@@ -58,7 +57,7 @@ class Base:
                 my_dump.write("[]")
             else:
                 dict_list = [i.to_dictionary() for i in list_objs]
-                json.dump(dict_list, my_dump)
+                my_dump.write(cls.to_json_string(dict_list))
 
     @staticmethod
     def from_json_string(json_string):
@@ -78,10 +77,11 @@ class Base:
         :param dictionary: This is a dictionary of all attributes
         :return: The instance and all attributes created
         """
-        dummy = cls(1, 1)
-        dummy.update(**dictionary)
+        if dictionary and dictionary != {}:
+            dummy = cls(1, 1)
+            dummy.update(**dictionary)
 
-        return dummy
+            return dummy
 
     @classmethod
     def load_from_file(cls):
