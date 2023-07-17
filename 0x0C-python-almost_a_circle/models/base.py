@@ -41,6 +41,8 @@ class Base:
         :param list_dictionaries: This is a list of dictionaries
         :return: The JSON representation
         """
+        if list_dictionaries is None:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
@@ -51,10 +53,12 @@ class Base:
         :return:
         """
 
-        dict_list = [i.to_dictionary() for i in list_objs]
-
         with open(file=f"{cls.__name__}.json", mode="w") as my_dump:
-            json.dump(dict_list, my_dump)
+            if list_objs is None:
+                my_dump.write("[]")
+            else:
+                dict_list = [i.to_dictionary() for i in list_objs]
+                json.dump(dict_list, my_dump)
 
     @staticmethod
     def from_json_string(json_string):
@@ -63,6 +67,8 @@ class Base:
         :param json_string: The JSON string to be converted
         :return: The list
         """
+        if json_string is None or json_string == "[]":
+            return []
         return json.loads(json_string)
 
     @classmethod
