@@ -6,7 +6,7 @@ if (isNaN(squareSize)) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < squareSize; i++) {
-    let row = ' ';
+    let row = '';
     for (let j = 0; j < squareSize; j++) {
       row += 'X';
     }
