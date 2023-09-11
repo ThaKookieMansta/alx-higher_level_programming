@@ -1,3 +1,5 @@
 #!/usr/bin/node
-const myString = 'C is Fun\nPython is cool\nJavaScript is amazing';
+const myString = `C is fun
+Python is cool
+JavaScript is amazing`;
 console.log(myString);
