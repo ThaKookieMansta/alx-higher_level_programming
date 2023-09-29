@@ -4,8 +4,6 @@ This file contains a script that takes a URL and email address, sends
 a post request to the URL and displays the body of the response
 """
 
-
-
 import urllib.parse
 import urllib.request
 import sys
